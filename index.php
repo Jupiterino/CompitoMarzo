@@ -22,7 +22,7 @@
 
     $app->get('/rilevatori_di_umidita', 'UmiditaController:show');
     $app->get('/rilevatori_di_umidita/{identificativo}', 'UmiditaController:search');
-    //$app->get('/rilevatori_di_umidita/{identificativo}/misurazioni ', );
+    //$app->get('/rilevatori_di_umidita/{identificativo}/misurazioni ');
     //$app->post('/rilevatori_di_umidita');
     //$app->get('/rilevatori_di_umidita/{identificativo}/misurazioni/maggiore_di/{valore_minimo}', );
     //$app->put('/rilevatori_di_umidita/{identificativo}');

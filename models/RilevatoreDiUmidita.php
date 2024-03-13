@@ -4,12 +4,12 @@
 
         protected $posizione;
 
-        public function __construct($ID) {
-            parent:: __construct($ID);
+        public function __construct($ID, $codiceSeriale) {
+            parent:: __construct($ID, $codiceSeriale);
 
         }
-        function set_posizione($ID) {
-            $this->posizione = $ID;
+        function set_posizione($posizione) {
+            $this->posizione = $posizione;
         }
         
         function get_posizione() {

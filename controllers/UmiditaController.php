@@ -7,9 +7,9 @@
 
         function show (Request $request, Response $response, $args) {
         
-            $Ril = new RilevatoreDiUmidita("umidita","123");
-    
-            $response->getBody()->write($Ril->json_encode());
+            $i = new impianto("Impianto1", "100", "300");
+            
+            $response->getBody()->write(json_encode($i->show("umidita")));
             return $response->withHeader("Content-Type", "application/json")->withStatus(200);
         }
     
@@ -17,31 +17,13 @@
     
         function search (Request $request, Response $response, $args) {
     
-            
+            $i = new impianto("Impianto1", "100", "300");
     
-            $response->getBody()->write($Ril->json_encode());
+            $response->getBody()->write(json_encode($i->search($args)));
             return $response->withHeader("Content-Type", "application/json")->withStatus(200);
         }
 
-        function search (Request $request, Response $response, $args) {
-    
-            $classe = new Classe();
-            $alunno = $classe->search($args['nome']);
-    
-            if($alunno) {
-    
-                $message = $alunno -> toString();
-            }
-    
-            else {
-    
-                $message = "Alunno inesitente";
-            }
-    
-            $response->getBody()->write($message);
-            return $response;
-    
-        }
+        
         
 
 

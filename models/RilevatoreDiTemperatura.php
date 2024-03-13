@@ -4,8 +4,8 @@
 
         protected $tipologia;
 
-        public function __construct($ID) {
-            parent:: __construct($ID);
+        public function __construct($ID, $codiceSeriale) {
+            parent:: __construct($ID, $codiceSeriale);
 
         }
         function set_tipologia($tipologia) {
@@ -21,7 +21,7 @@
         public function jsonSerialize(){
 
             $a = [
-                "tipologia" => $this->posizitipologiaone
+                "tipologia" => $this->tipologia
             ];
             return $a;
 

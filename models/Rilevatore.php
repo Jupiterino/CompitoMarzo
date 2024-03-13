@@ -38,6 +38,14 @@
             return $this->ID;
         }
 
+        function set_codiceSeriale($codiceSeriale) {
+            $this->codiceSeriale = $codiceSeriale;
+        }
+        
+        function get_codiceSeriale() {
+            return $this->codiceSeriale;
+        }
+
         
         
         

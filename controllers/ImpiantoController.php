@@ -9,7 +9,7 @@
         
             $impianto = new impianto("Impianto1", "100", "300");
     
-            $response->getBody()->write($impianto->json_encode());
+            $response->getBody()->write(json_encode($impianto));
             return $response->withHeader("Content-Type", "application/json")->withStatus(200);
         }
     }

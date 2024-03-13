@@ -24,13 +24,31 @@
             $R4 -> set_tipologia("aria");
 
             $this->array = [$R1,$R2,$R3,$R4];
+         
         }
 
-        public function search($nome){
+        public function show($ID){
+            $array2 = array();
+            for($i = 0; $i < count($this->array ); $i++) {
+
+                if($this->array[$i]->get_ID()== $ID)
+                    array_push($array2, $this->array[$i]);    
+
+            }
+            return $array2;
+        }
+
+
+        public function arrayy(){
+            return $this->array;
+        }
+
+
+        public function search($id){
 
             for($i = 0; $i < count($this->array ); $i++) {
 
-                if($this->array[$i]->get_nome()== $nome)
+                if($this->array[$i]->get_codiceSeriale()== $codiceSeriale)
                     return $this->array[$i];    
 
             }
