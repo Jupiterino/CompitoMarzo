@@ -36,6 +36,17 @@
         function misu(){
             return $this->misurazioni;
         }
+
+        function valmin($val){
+            $array2 = array();
+            for($i = 0; $i < count($this->misurazioni ); $i++) {
+
+                if($this->misurazioni[$i]->get_valore()< $val)
+                    array_push($array2, $this->misurazioni[$i]);    
+
+            }
+            return $array2;
+        }
         function set_ID($ID) {
             $this->ID = $ID;
         }

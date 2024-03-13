@@ -33,6 +33,15 @@
             return $response->withHeader("Content-Type", "application/json")->withStatus(200);
         }
 
+        function valmin (Request $request, Response $response, $args) {
+    
+            $R = new RilevatoreDiUmidita("umidita", "123");
+            $R -> set_posizione("terra");
+    
+            $response->getBody()->write(json_encode($R->valmin($args)));
+            return $response->withHeader("Content-Type", "application/json")->withStatus(200);
+        }
+
     }
 
 ?>

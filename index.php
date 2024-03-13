@@ -24,13 +24,13 @@
     $app->get('/rilevatori_di_umidita/{identificativo}', 'UmiditaController:search');
     $app->get('/rilevatori_di_umidita/{identificativo}/misurazioni', 'UmiditaController:misu');
     //$app->post('/rilevatori_di_umidita');
-    //$app->get('/rilevatori_di_umidita/{identificativo}/misurazioni/maggiore_di/{valore_minimo}', );
+    //$app->get('/rilevatori_di_umidita/{identificativo}/misurazioni/maggiore_di/{valore_minimo}', 'UmiditaController:valmin');
     //$app->put('/rilevatori_di_umidita/{identificativo}');
     
 
-    //$app->get('/rilevatori_di_temperatura');
-    //$app->get('/rilevatori_di_temperatura/{identificativo}');
-    //$app->get('/rilevatori_di_temperatura/{identificativo}/misurazioni ', );
+    $app->get('/rilevatori_di_temperatura' , 'TemperaturaController:show');
+    $app->get('/rilevatori_di_temperatura/{identificativo}', 'TemperaturaController:search');
+    $app->get('/rilevatori_di_temperatura/{identificativo}/misurazioni ','TemperaturaController:misu' );
     //$app->get('/rilevatori_di_temperatura/{identificativo}/misurazioni/maggiore_di/{valore_minimo}', );
     //$app->post('/rilevatori_di_temperatura');
     //$app->put('/rilevatori_di_temperatura/{identificativo}');
