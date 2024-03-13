@@ -13,27 +13,17 @@
             $this->latitudine = $latitudine;
             $this->longitudine = $longitudine;
 
-            $R1 = new rilevatore();
-            $R2 = new rilevatore();
-            $R3 = new rilevatore();
+            $R1 = new RilevatoreDiUmidita("umidita", "123");
+            $R2 = new RilevatoreDiUmidita("umidita", "126");
+            $R3 = new RilevatoreDiTemperatura("temperatura", "129");
+            $R4 = new RilevatoreDiTemperatura("temperatura", "133");
 
-            $this->array = [$R1,$R2,$R3];
+            $R1 -> set_posizione("terra");
+            $R2 -> set_posizione("aria");
+            $R3 -> set_tipologia("acqua");
+            $R4 -> set_tipologia("aria");
 
-            $R1 -> set_nome("Gabriele");
-            $R1 -> set_cognome("Borgi");
-            $R1 -> set_eta("19");
-
-            $R2 -> set_nome("Andrea");
-            $R2 -> set_cognome("Sestini");
-            $R2 -> set_eta("18");
-
-
-            $R3 -> set_nome("Samuele");
-            $R3 -> set_cognome("Cosma");
-            $R3 -> set_eta("18");
-
-            $this->nome = "5cia";
-
+            $this->array = [$R1,$R2,$R3,$R4];
         }
 
         public function search($nome){
@@ -64,22 +54,14 @@
 
         }
 
-        public function toString() {
-
-            $string = "";
-            for($i = 0; $i < count($this->array); $i++) {
-
-                $string = $string . $this->array[$i]->toString();
-            }
-
-            return $string;
-        }
+        
 
         public function jsonSerialize(){
 
             $a = [
-                "Nome" => $this->nome,
-                "Alunni" => $this->array
+                "nome" => $this->nome,
+                "latitudine" => $this->latitudine,
+                "longitudine" => $this->longitudine
             ];
             return $a;
         }
