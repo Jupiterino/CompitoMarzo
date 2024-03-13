@@ -26,9 +26,15 @@
             $m1->set_valore("120");
 
             $m2->set_data("2/2/2001");
-            $m1->set_valore("140");
+            $m2->set_valore("140");
+
+            $this->misurazioni = [$m1, $m2];
             
 
+        }
+
+        function misu(){
+            return $this->misurazioni;
         }
         function set_ID($ID) {
             $this->ID = $ID;

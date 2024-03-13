@@ -44,11 +44,11 @@
         }
 
 
-        public function search($id){
+        public function search($identificativo){
 
             for($i = 0; $i < count($this->array ); $i++) {
 
-                if($this->array[$i]->get_codiceSeriale()== $codiceSeriale)
+                if($this->array[$i]->get_codiceSeriale()== $identificativo)
                     return $this->array[$i];    
 
             }

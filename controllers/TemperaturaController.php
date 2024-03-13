@@ -9,7 +9,7 @@
         
             $i = new impianto("Impianto1", "100", "300");
             
-            $response->getBody()->write(json_encode($i->show("umidita")));
+            $response->getBody()->write(json_encode($i->show("temperatura")));
             return $response->withHeader("Content-Type", "application/json")->withStatus(200);
         }
     
@@ -23,15 +23,16 @@
             return $response->withHeader("Content-Type", "application/json")->withStatus(200);
         }
 
-
         function misu (Request $request, Response $response, $args) {
     
-            $R = new RilevatoreDiUmidita("umidita", "123");
-            $R -> set_posizione("terra");
+            $R = new RilevatoreDiUmidita("temperatura", "129");
+            $R -> set_posizione("acqua");
     
             $response->getBody()->write(json_encode($R->misu()));
             return $response->withHeader("Content-Type", "application/json")->withStatus(200);
         }
+        
+
 
     }
 

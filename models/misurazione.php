@@ -14,8 +14,8 @@
             return $this->valore;
         }
 
-        function set_valore($data) {
-            $this->data = $data;
+        function set_valore($valore) {
+            $this->valore = $valore;
         }
         
         function get_valore() {
